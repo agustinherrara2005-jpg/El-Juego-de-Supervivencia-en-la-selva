@@ -13,23 +13,23 @@ public class Arbol {
     //despues de que analizaramos como ordenarlos decidimos hacerlo de forma arriba hacia abajo, porque se podia hacer tambien de abajo hacia arriba empezando desde las NodosHOJAS
     public void comenzarHistoria() {
         raiz = new Nodo("Te despiertas en la selva, no entendes nada, ves el cielo y esta por llover,\n"
-                + "¿que haces?" + "Buscar refugio/Buscar comida");
+                + "Que haces? \n" + "Buscar refugio/Buscar comida");
         //lo planteamos de forma que iremos creando las opciones, o los dialogos creando el arbol de a uno
         //NIVEL 1= 2 OPCIONES 
         //NODO IZQUIERDO 1 
         raiz.nodoIzquierdo = new Nodo("Buscaste refugio en una cueva! pero te encontraste con muchos murcielagos peligrosos!\n"
-                + "¿Que haces?" + "No hacer ruido/Correr por tu vida");
+                + "Que haces? \n" + "No hacer ruido/Correr por tu vida");
         //NODO DERECHO 1
         raiz.nodoDerecho = new Nodo("buscaste comida, caminaste mucho tiempo y no encontraste nada y se esta por largar a llover\n"
-                + "que haces?" + "trepar un arbol y eperar/hacer refugio con ramas del suelo");
+                + "Que haces? \n" + "trepar un arbol y eperar/hacer refugio con ramas del suelo");
 
         //NIVEL 2 = Opciones 4 --------------------
         //NIVEL 2 = Opcion del lado izquierdo 
         //DEL LADO IZQUIERDO
-        raiz.nodoIzquierdo.nodoIzquierdo = new Nodo("Los murciélagos no te detectan.Por el frio de la selva y la lluvia, se encuentran descansando.\n"
-                + "¿Qué haces?" + "Quedarte en la cueva/Salir,cuando pare la lluvia");
-        raiz.nodoIzquierdo.nodoDerecho = new Nodo("Los murciélagos salen de la cueva volando a atacarte\n"
-                + "Que haces?" + "Te escondes detrás de unos árboles/sigues a un lugar seguro");
+        raiz.nodoIzquierdo.nodoIzquierdo = new Nodo("Los murcielagos no te detectan.Por el frio de la selva y la lluvia, se encuentran descansando.\n"
+                + "Qué haces? \n" + "Quedarte en la cueva/Salir,cuando pare la lluvia");
+        raiz.nodoIzquierdo.nodoDerecho = new Nodo("Los murcielagos salen de la cueva volando a atacarte\n"
+                + "Que haces? \n" + "Te escondes detrás de unos árboles/sigues a un lugar seguro");
         //NIVEL 2 Opciones del lado derecho
         //DEL LADO DERECHO
         raiz.nodoDerecho.nodoIzquierdo = new Nodo("Trepaste un arbol con muchas hojas que te protegen de la lluvia! \n"
@@ -40,13 +40,13 @@ public class Arbol {
 
         //NIVEL 3 = 8 opciones--------------------------
         //NODOS DEL LADO IZQUIERDO
-        raiz.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo = new Nodo("Sales de la cueva, cuando para la lluvia  y encuentras agua filtrándose de una roca.\n"
-                + "¿Qué haces?\n" + "Beber agua/Explorar más profundo");
+        raiz.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo = new Nodo("Sales de la cueva, cuando para la lluvia  y encuentras agua filtrandose de una roca.\n"
+                + "Qué haces?\n" + "Beber agua/Explorar más profundo");
         raiz.nodoIzquierdo.nodoIzquierdo.nodoDerecho = new Nodo("Decides salir cuando para la lluvia .. a explorar, hay un sendero lleno de ramas y serpientes camufladas entre ellas \n"
-                + "¿Que haces?\n" + "Vas por ese sendero/Retrocedes a esperar en la cueva");
+                + "Que haces?\n" + "Vas por ese sendero/Retrocedes a esperar en la cueva");
 
         //SEGUIMOS LADO IZQUIERDO PERO PASAMOS AL DERECHO
-        raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo = new Nodo("Te escondes, los murciélagos se alejan y encuentras una mochila vieja con un cuchillo y una botella vacia lo tomas. Escuchas el rugido de un animal acercandose.\n"
+        raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo = new Nodo("Te escondes, los murcielagos se alejan y encuentras una mochila vieja con un cuchillo y una botella vacia lo tomas. Escuchas el rugido de un animal acercandose.\n"
                 + "Que haces? \n"
                 + "Atacas al animal/Te tiras al suelo.");
         raiz.nodoIzquierdo.nodoDerecho.nodoDerecho = new Nodo("esquivas los arboles y encuentras un pequeño pozo\n"
@@ -66,13 +66,13 @@ public class Arbol {
         raiz.nodoDerecho.nodoIzquierdo.nodoIzquierdo = new Nodo("Si decides mirar, ves una pantera negra durmiendo en una de sus ramas!! pero por estar mojado por la lluvia no detecta tu olor \n"
                 + "que haces?\n"
                 + "Bajas del arbol a buscar otro lugar/Esperar que termine la lluvia y bajar.");
-        raiz.nodoDerecho.nodoIzquierdo.nodoDerecho = new Nodo("No miraste, y habia una serpiente Venenosa, cuando las ves es demasiado tarde, esta yendo hacia a ti y TE PICA!\n"
+        raiz.nodoDerecho.nodoIzquierdo.nodoDerecho = new Nodo("No miraste, y habia una serpiente venenosa, cuando las ves es demasiado tarde, esta yendo hacia a ti y TE PICA!\n"
                 + "Que haces?\n "
                 + "succionas el veneno/Me quedo en el arbol.");
 
         //NIVEL 4 = OPCIONES 16 Y FINALES HOJAS 
         //LADO IZQUIERDO DESDE LA RAIZ
-        raiz.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo = new Nodo("Bebes el agua por unos días mientras te refugias y vienen a rescatarte en un helicoptero.\n"
+        raiz.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo = new Nodo("Bebes el agua por unos dias mientras te refugias y vienen a rescatarte en un helicoptero.\n"
                 + " SOBREVIVISTE!!");
         raiz.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo.nodoDerecho = new Nodo("Exploras mas profundo te caes al agua, te ahogas y mueres. NO SOBREVIVISTE!!\n"
                 + "Fin de la historia");
@@ -84,14 +84,14 @@ public class Arbol {
                 + "Fin de la historia");
 
         //NIVEL 4 LADO IZQUIERDO, SEGUIDO PARTE DERECHA
-        raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo.nodoIzquierdo = new Nodo("Atacas al animal  con el cuchillo y te lastima también.\n"
+        raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo.nodoIzquierdo = new Nodo("Atacas al animal  con el cuchillo y te lastima tambien.\n"
                 + "NO SOBREVIVISTE!!\n"
                 + "Fin de la historia");
         raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo.nodoDerecho = new Nodo("los murciélagos te pasan por encima, el ruido alerta a unos senderistas ayudandote a salir de selva!\n "
                 + "SOBREVIVISTE!! EXCELENTE");
 
-        raiz.nodoIzquierdo.nodoDerecho.nodoDerecho.nodoIzquierdo = new Nodo("los murciélagos pasan de largo pero lo que no te das cuenta es que habia mucho barro en el pozo\n");
-        raiz.nodoIzquierdo.nodoDerecho.nodoDerecho.nodoDerecho = new Nodo("los murciélagos te empiezan a atacar y te pegan la rabia!\n NO SOBREVIVISTE!! FIN");
+        raiz.nodoIzquierdo.nodoDerecho.nodoDerecho.nodoIzquierdo = new Nodo("los murcielagos pasan de largo pero lo que no te das cuenta es que habia un pozo, este tiene agua mineral que te ayuda a resistir unos dias hasta que te encuentran\n" + " SOBREVIVISTE! FIN DE JUEGO");
+        raiz.nodoIzquierdo.nodoDerecho.nodoDerecho.nodoDerecho = new Nodo("los murcielagos te empiezan a atacar y te pegan la rabia!\n" + " SOBREVIVISTE! FIN DE JUEGO");
 
         //NIVEL 4 LADO DERECHO, hacia la izquierda
         raiz.nodoDerecho.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo = new Nodo("Bajas silenciosamente el arbol, y empiezas a caminar, deja de llover se despeja el cielo. ves a lo lejos humo y te diriges hacia el, es un campamento con mas sobrevivientes, sobreviven juntos hasta que los encuentra un helicoptero!\n"
@@ -118,15 +118,15 @@ public class Arbol {
     }
 
     public void comienzaElJuego(Scanner scanner) {
-        // IF para ver que el juego no sea una HOJA(final)
+        // if para ver que el juego no sea una HOJA(final)
         if (raiz == null) {
             System.out.println("El juego todavia no arranca...");
         }
 
         System.out.println("Comienza el juego de Supervivencia!!");
-        System.out.println("COMO JUGAR?\n "
-                + "EN BASE SE DESARROLLA LA HISTORIA TIENE QUE ELEGIR EN 2 OPCIONES CON EL NUMERO 1 (para Izquierda) o 2 (para Derecha)\n"
-                + "DEPENDE LAS SITUACIONES QUE ELIJAS, SERA TU FINAL BUENA SUERTE!!");
+        System.out.println("COMO JUGAR?\n"
+                + "MIENTRAS SE DESARROLLA LA HISTORIA TIENE QUE ELEGIR EN 2 OPCIONES CON EL NUMERO 1 (para Izquierda) o 2 (para Derecha)\n"
+                + "DEPENDE LAS SITUACIONES QUE ELIJAS SERA TU FINAL, BUENA SUERTE!! \n");
 
         Nodo opcionActual = raiz;
         while (!opcionActual.identificarHoja()) {
@@ -136,10 +136,10 @@ public class Arbol {
             int eleccion;
             if (scanner.hasNextInt()) {
                 eleccion = scanner.nextInt();
-                System.out.println(); // Salto de línea estético
+                System.out.println(); // salto de línea estético
             } else {
-                System.out.println("\n❌ Entrada no válida. Debes ingresar el número 1 o 2.\n");
-                scanner.next(); // Limpia el buffer para evitar bucles infinitos por texto
+                System.out.println("\nEntrada no valida. Debes ingresar el numero 1 o 2.\n");
+                scanner.next(); // limpia el buffer para evitar bucles infinitos por texto
                 continue;
             }
 
@@ -148,13 +148,13 @@ public class Arbol {
             } else if (eleccion == 2 && opcionActual.nodoDerecho != null) {
                 opcionActual = opcionActual.nodoDerecho;
             } else {
-                System.out.println("❌ Opción no válida. Por favor ingresa 1 o 2.\n");
+                System.out.println("Opcion no valida. Por favor ingresa 1 o 2.\n");
             }
         }
 
         System.out.println("\n=================================================");
         System.out.println("               *** FIN DEL JUEGO *** ");
-        System.out.println(opcionActual.opcion); // Muestra el desenlace final del Nivel 4
+        System.out.println(opcionActual.opcion); // muestra el desenlace final del Nivel 4
         System.out.println("=================================================");
     }
 
