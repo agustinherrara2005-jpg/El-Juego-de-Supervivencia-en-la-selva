@@ -1,17 +1,64 @@
-
 package main;
 
-/**
- *
- * @author Admin
- */
+import java.util.Scanner;
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner scanner = new java.util.Scanner(System.in);
+
+        Arbol juego = new Arbol();
+        juego.comenzarHistoria();
+
+        // Scanner principal para controlar el menú de inicio
+        Scanner scannerMain = new Scanner(System.in);
+        int opcionMenu = 0;
+
+        do {
+            System.out.println("\n=================================================");
+            System.out.println("       PROYECTO INTEGRADOR - SEGUNDO PARCIAL     ");
+            System.out.println("=================================================");
+            System.out.println("1. 🎮 ¡Jugar Supervivencia en la Selva!");
+            System.out.println("2. 👥 Ver Integrantes del Grupo");
+            System.out.println("3. ❌ Salir del Programa");
+            System.out.println("=================================================");
+            System.out.print("Seleccione una opción: ");
+
+            // Controlamos que el usuario ingrese un número
+            if (scannerMain.hasNextInt()) {
+                opcionMenu = scannerMain.nextInt();
+                System.out.println();
+            } else {
+                System.out.println("\n❌ Por favor, ingresa un número válido.");
+                scannerMain.next(); // Limpia la entrada incorrecta
+                continue;
+            }
+
+            switch (opcionMenu) {
+                case 1:
+                    // Pasamos el Scanner activo por parámetro para no crear múltiples instancias
+                    juego.comienzaElJuego(scannerMain);
+                    break;
+                case 2:
+
+                    System.out.println("               INTEGRANTES DEL GRUPO             ");
+                    System.out.println("=================================================");
+                    System.out.println("- [Agustin Herrera]");
+                    System.out.println("- [Guada Bustos]");
+                    System.out.println("- [Juan A Clavero Marchioni]");
+
+                    break;
+                case 3:
+                    System.out.println("¡Gracias por jugar! Cerrando el simulador...");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intente con 1, 2");
+            }
+
+        } while (opcionMenu != 3);
+
+        // Cerramos el Scanner definitivamente al apagar el programa completo
+        scannerMain.close();
     }
-    
+
 }

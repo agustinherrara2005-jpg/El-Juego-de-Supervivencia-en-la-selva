@@ -20,7 +20,7 @@ public class Nodo {
         this.opcion = opcion;
     }
     //identifica el final
-    public boolean identificarHoja(String opcion) {
+    public boolean identificarHoja() {
         return (nodoDerecho == null && nodoIzquierdo == null);
     }
 }

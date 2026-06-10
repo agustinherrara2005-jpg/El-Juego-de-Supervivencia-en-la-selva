@@ -1,5 +1,4 @@
 package main;
-
 import java.util.Scanner;
 
 public class Arbol {
@@ -118,36 +117,38 @@ public class Arbol {
 
     }
 
-    public void comienzaElJuego() {
+    public void comienzaElJuego(Scanner scanner) {
         // IF para ver que el juego no sea una HOJA(final)
         if (raiz == null) {
             System.out.println("El juego todavia no arranca...");
         }
-        
-        
-        
-        System.out.println("Comienza el juego de Supervivencia!!");
-            System.out.println("COMO JUGAR?\n "
-                    + "EN BASE SE DESARROLLA LA HISTORIA TIENE QUE ELEGIR EN 2 OPCIONES CON EL NUMERO 1 (para Izquierda) o 2 (para Derecha)\n"
-                    + "DEPENDE LAS SITUACIONES QUE ELIJAS, SERA TU FINAL BUENA SUERTE!!");
-        
-            
-            
-        Nodo opcionActual = raiz;
-        Scanner scanner = new java.util.Scanner(System.in);
 
-        while (opcionActual != null) {
+        System.out.println("Comienza el juego de Supervivencia!!");
+        System.out.println("COMO JUGAR?\n "
+                + "EN BASE SE DESARROLLA LA HISTORIA TIENE QUE ELEGIR EN 2 OPCIONES CON EL NUMERO 1 (para Izquierda) o 2 (para Derecha)\n"
+                + "DEPENDE LAS SITUACIONES QUE ELIJAS, SERA TU FINAL BUENA SUERTE!!");
+
+        Nodo opcionActual = raiz;
+        while (!opcionActual.identificarHoja()) {
             System.out.println(opcionActual.opcion);
-            System.out.print("Tu elección (1 o 2): ");
-            
-            int eleccion = scanner.nextInt();
+            System.out.print("Tu eleccion (1 o 2): ");
+
+            int eleccion;
+            if (scanner.hasNextInt()) {
+                eleccion = scanner.nextInt();
+                System.out.println(); // Salto de línea estético
+            } else {
+                System.out.println("\n❌ Entrada no válida. Debes ingresar el número 1 o 2.\n");
+                scanner.next(); // Limpia el buffer para evitar bucles infinitos por texto
+                continue;
+            }
 
             if (eleccion == 1 && opcionActual.nodoIzquierdo != null) {
                 opcionActual = opcionActual.nodoIzquierdo;
             } else if (eleccion == 2 && opcionActual.nodoDerecho != null) {
                 opcionActual = opcionActual.nodoDerecho;
             } else {
-                System.out.println("Opción no válida. Por favor ingresa 1 o 2.");
+                System.out.println("❌ Opción no válida. Por favor ingresa 1 o 2.\n");
             }
         }
 
@@ -156,4 +157,5 @@ public class Arbol {
         System.out.println(opcionActual.opcion); // Muestra el desenlace final del Nivel 4
         System.out.println("=================================================");
     }
+
 }
