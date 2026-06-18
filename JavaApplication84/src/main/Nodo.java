@@ -11,7 +11,7 @@ public class Nodo {
         this.nodoIzquierdo = nodoIzquierdo;
         this.opcion = opcion;
     }
-    //Esto hace que el programa se de cuenta que es una hoja osea el final. 
+    //esto hace que el programa se de cuenta que es una hoja osea el final. 
     //usamos null para ver que no tenga hijos
 
     public Nodo(String opcion) {

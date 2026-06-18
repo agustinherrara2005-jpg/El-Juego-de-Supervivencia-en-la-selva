@@ -1,5 +1,4 @@
 package main;
-import java.util.Scanner;
 
 public class Arbol {
 
@@ -9,8 +8,8 @@ public class Arbol {
         this.raiz = null;
     }
 
-    //en esta clase creo que se hacen todos los constructores para llamarlos desde el main
-    //despues de que analizaramos como ordenarlos decidimos hacerlo de forma arriba hacia abajo, porque se podia hacer tambien de abajo hacia arriba empezando desde las NodosHOJAS
+ //en esta clase creo que se hacen todos los constructores para llamarlos desde el main
+   //despues de que analizaramos como ordenarlos decidimos hacerlo de forma arriba hacia abajo, porque se podia hacer tambien de abajo hacia arriba empezando desde las NodosHOJAS
     public void comenzarHistoria() {
         raiz = new Nodo("Te despiertas en la selva, no entendes nada, ves el cielo y esta por llover,\n"
                 + "Que haces? \n" + "Buscar refugio/Buscar comida");
@@ -27,9 +26,9 @@ public class Arbol {
         //NIVEL 2 = Opcion del lado izquierdo 
         //DEL LADO IZQUIERDO
         raiz.nodoIzquierdo.nodoIzquierdo = new Nodo("Los murcielagos no te detectan.Por el frio de la selva y la lluvia, se encuentran descansando.\n"
-                + "Qué haces? \n" + "Quedarte en la cueva/Salir,cuando pare la lluvia");
+                + "Que haces? \n" + "Quedarte en la cueva/Salir,cuando pare la lluvia");
         raiz.nodoIzquierdo.nodoDerecho = new Nodo("Los murcielagos salen de la cueva volando a atacarte\n"
-                + "Que haces? \n" + "Te escondes detrás de unos árboles/sigues a un lugar seguro");
+                + "Que haces? \n" + "Te escondes detrás de unos arboles/sigues a un lugar seguro");
         //NIVEL 2 Opciones del lado derecho
         //DEL LADO DERECHO
         raiz.nodoDerecho.nodoIzquierdo = new Nodo("Trepaste un arbol con muchas hojas que te protegen de la lluvia! \n"
@@ -41,7 +40,7 @@ public class Arbol {
         //NIVEL 3 = 8 opciones--------------------------
         //NODOS DEL LADO IZQUIERDO
         raiz.nodoIzquierdo.nodoIzquierdo.nodoIzquierdo = new Nodo("Sales de la cueva, cuando para la lluvia  y encuentras agua filtrandose de una roca.\n"
-                + "Qué haces?\n" + "Beber agua/Explorar más profundo");
+                + "Que haces?\n" + "Beber agua/Explorar más profundo");
         raiz.nodoIzquierdo.nodoIzquierdo.nodoDerecho = new Nodo("Decides salir cuando para la lluvia .. a explorar, hay un sendero lleno de ramas y serpientes camufladas entre ellas \n"
                 + "Que haces?\n" + "Vas por ese sendero/Retrocedes a esperar en la cueva");
 
@@ -56,15 +55,15 @@ public class Arbol {
         //NIVEL 3 DEL LADO DERECHO----------------------
         raiz.nodoDerecho.nodoDerecho.nodoIzquierdo = new Nodo("agarras una piedra del suelo y la matas! se aplasta tuviste mucha suerte! \n"
                 + "de repente el lugar del suceso es un nido de arañas!!\n"
-                + "que haces? \n"
+                + "Que haces? \n"
                 + "Correr por tu vida/ Agarrar un RAID del suelo y matarlas.");
         raiz.nodoDerecho.nodoDerecho.nodoDerecho = new Nodo("Corriendo desesperado, llegas a una parte elevada, donde ves un humo, como una fogata y del otro lado un rio\n"
-                + "que haces? \n"
+                + "Que haces? \n"
                 + "Voy hacia el humo a investigar/bajo al rio y me hidrato.");
 
         //SEGUIMOS LADO DERECHO PERO USAMOS UN IZQUIERDO
         raiz.nodoDerecho.nodoIzquierdo.nodoIzquierdo = new Nodo("Si decides mirar, ves una pantera negra durmiendo en una de sus ramas!! pero por estar mojado por la lluvia no detecta tu olor \n"
-                + "que haces?\n"
+                + "Que haces?\n"
                 + "Bajas del arbol a buscar otro lugar/Esperar que termine la lluvia y bajar.");
         raiz.nodoDerecho.nodoIzquierdo.nodoDerecho = new Nodo("No miraste, y habia una serpiente venenosa, cuando las ves es demasiado tarde, esta yendo hacia a ti y TE PICA!\n"
                 + "Que haces?\n "
@@ -83,11 +82,11 @@ public class Arbol {
                 + "NO SOBREVIVISTE!!\n"
                 + "Fin de la historia");
 
-        //NIVEL 4 LADO IZQUIERDO, SEGUIDO PARTE DERECHA
+        //NIVEL 41 LADO IZQUIERDO, SEGUIDO PARTE DERECHA
         raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo.nodoIzquierdo = new Nodo("Atacas al animal  con el cuchillo y te lastima tambien.\n"
                 + "NO SOBREVIVISTE!!\n"
                 + "Fin de la historia");
-        raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo.nodoDerecho = new Nodo("los murciélagos te pasan por encima, el ruido alerta a unos senderistas ayudandote a salir de selva!\n "
+        raiz.nodoIzquierdo.nodoDerecho.nodoIzquierdo.nodoDerecho = new Nodo("los murcielagos te pasan por encima, el ruido alerta a unos senderistas ayudandote a salir de selva!\n "
                 + "SOBREVIVISTE!! EXCELENTE");
 
         raiz.nodoIzquierdo.nodoDerecho.nodoDerecho.nodoIzquierdo = new Nodo("los murcielagos pasan de largo pero lo que no te das cuenta es que habia un pozo, este tiene agua mineral que te ayuda a resistir unos dias hasta que te encuentran\n" + " SOBREVIVISTE! FIN DE JUEGO");
@@ -133,3 +132,4 @@ public Nodo avanzar(Nodo actual, int eleccion) {
     return actual;
 }
 }
+
