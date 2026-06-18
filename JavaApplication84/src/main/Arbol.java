@@ -116,46 +116,20 @@ public class Arbol {
                 + " SOBREVIVISTE! FIN DE JUEGO");
 
     }
+public Nodo getRaiz() {
+    return raiz;
+}
 
-    public void comienzaElJuego(Scanner scanner) {
-        // if para ver que el juego no sea una HOJA(final)
-        if (raiz == null) {
-            System.out.println("El juego todavia no arranca...");
-        }
+public Nodo avanzar(Nodo actual, int eleccion) {
 
-        System.out.println("Comienza el juego de Supervivencia!!");
-        System.out.println("COMO JUGAR?\n"
-                + "MIENTRAS SE DESARROLLA LA HISTORIA TIENE QUE ELEGIR EN 2 OPCIONES CON EL NUMERO 1 (para Izquierda) o 2 (para Derecha)\n"
-                + "DEPENDE LAS SITUACIONES QUE ELIJAS SERA TU FINAL, BUENA SUERTE!! \n");
-
-        Nodo opcionActual = raiz;
-        while (!opcionActual.identificarHoja()) {
-            System.out.println(opcionActual.opcion);
-            System.out.print("Tu eleccion (1 o 2): ");
-
-            int eleccion;
-            if (scanner.hasNextInt()) {
-                eleccion = scanner.nextInt();
-                System.out.println(); // salto de línea estético
-            } else {
-                System.out.println("\nEntrada no valida. Debes ingresar el numero 1 o 2.\n");
-                scanner.next(); // limpia el buffer para evitar bucles infinitos por texto
-                continue;
-            }
-
-            if (eleccion == 1 && opcionActual.nodoIzquierdo != null) {
-                opcionActual = opcionActual.nodoIzquierdo;
-            } else if (eleccion == 2 && opcionActual.nodoDerecho != null) {
-                opcionActual = opcionActual.nodoDerecho;
-            } else {
-                System.out.println("Opcion no valida. Por favor ingresa 1 o 2.\n");
-            }
-        }
-
-        System.out.println("\n=================================================");
-        System.out.println("               *** FIN DEL JUEGO *** ");
-        System.out.println(opcionActual.opcion); // muestra el desenlace final del Nivel 4
-        System.out.println("=================================================");
+    if (eleccion == 1 && actual.nodoIzquierdo != null) {
+        return actual.nodoIzquierdo;
     }
 
+    if (eleccion == 2 && actual.nodoDerecho != null) {
+        return actual.nodoDerecho;
+    }
+
+    return actual;
+}
 }
